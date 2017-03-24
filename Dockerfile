@@ -3,7 +3,8 @@ FROM django:latest
 MAINTAINER Samuel Kurath <skurath@hsr.ch>
 
 EXPOSE 8000
-
+ENV http_proxy http://165.225.104.34:80 
+ENV https_proxy https://165.225.104.34:80
 RUN apt-get update \
 && apt-get install -y nginx python-pip python-dev git vim \
 && pip install --upgrade pip \
